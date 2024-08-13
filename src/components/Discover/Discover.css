@@ -11,17 +11,44 @@
   z-index: 1;
   top: 50px;
   right: 0;
-  background-color: black;
+  background-color: whitesmoke;
   overflow-x: hidden;
   padding-top: 20px;
 }
 .place-card {
   background-color: whitesmoke;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-items: center;
+  display: inline-grid;
+  margin: 30px 30px;
+  width: 500px;
+  height: 800px;
+  border: solid 3px #ddd;
+  border-radius: 10px;
+  text-align: center;
 }
-/* #places-container{
+.place-video {
+  width: 500px;
+  height: 280px;
+  border: solid 1px #ddd;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.place-video:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.saved-place-card {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  width: 280px;
+  height: 150px;
+  border: solid 3px #ddd;
+  border-radius: 10px;
+  text-align: center;
+  font-size: xx-small;
+  margin-left: 10px;
+}
 
+/* #places-container {
 } */
