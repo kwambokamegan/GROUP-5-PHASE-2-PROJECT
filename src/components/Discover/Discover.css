@@ -1,12 +1,27 @@
-#content-container {
+#discover-container {
+  margin-top: 50px;
+  margin-right: 300px;
+}
+/* #content-container {
+} */
+#saved-content-container {
   height: 100%;
   width: 300px;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: 50px;
+  right: 0;
   background-color: black;
   overflow-x: hidden;
   padding-top: 20px;
-  border-right: solid 3px grey;
 }
+.place-card {
+  background-color: whitesmoke;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-items: center;
+}
+/* #places-container{
+
+} */
