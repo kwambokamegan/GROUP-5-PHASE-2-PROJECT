@@ -28,7 +28,6 @@ function Discover() {
         <h1>{place.title}</h1>
         <h4>{place.description}</h4>
         <h5>{place.activities}</h5>
-        {/* <h5>{place.transport_options}</h5> */}
       </div>
     );
   });
@@ -53,7 +52,7 @@ function Discover() {
     return (
       <div className="saved-place-card" key={savedPlace.id}>
         <h1>{savedPlace.title}</h1>
-        <h4>{savedPlace.description}</h4>
+        <h4>{savedPlace.transport_options}</h4>
         {/* // <h5>{savedPlace.activities}</h5> */}
       </div>
     );

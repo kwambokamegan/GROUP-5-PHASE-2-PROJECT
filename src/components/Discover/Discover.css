@@ -47,7 +47,8 @@
   border-radius: 10px;
   text-align: center;
   font-size: xx-small;
-  margin-left: 10px;
+  margin: 5px;
+  padding: 10px;
 }
 
 /* #places-container {
