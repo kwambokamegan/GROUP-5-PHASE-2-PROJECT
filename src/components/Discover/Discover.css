@@ -1,0 +1,12 @@
+#content-container {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-right: solid 3px grey;
+}
