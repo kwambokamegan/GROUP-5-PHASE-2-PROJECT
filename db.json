@@ -70,6 +70,33 @@
             "activities" : "In Lamu, popular activities include exploring the historic Old Town with its Swahili architecture, relaxing on serene beaches, taking dhow boat trips, and visiting the Lamu Museum to learn about local culture.",
             "transport options" : "You can travel from Nairobi to Lamu either by bus or by air. The cheapest option is to take a bus to Malindi or Mombasa, then continue your journey to Lamu by air from Malindi. The total travel time can vary, but flights from Malindi to Lamu take approximately 1¼ hours. Alternatively, you can look into direct flights from Nairobi to Lamu, which may be quicker but could be more expensive. Be sure to double-check schedules and prices for the latest information."
         }
-    ]
+    ],
+
+
+        "reviews" : [
+            {
+                "id": "1",
+                "name" : "Ethan Walker",
+                "image" : "https://media.gettyimages.com/id/1292611528/photo/mara-lodges-kenya-tourists-enjoy-a-wildlife-game-drive-on-december-20-2020-in-the-mara-north.jpg?s=612x612&w=0&k=20&c=Ei45bSL8zPuK8NcHddazYzEpMDbOj5B9DMyXlu8D1RQ=",
+                "location" : "Nairobi",
+                "review" : "My visit to Nairobi was fantastic, with its vibrant city life and diverse culture. The highlight was Nairobi National Park, where I saw lions, giraffes, and rhinos against the city skyline. The park’s easy access and knowledgeable guides made the safari experience exceptional. Highly recommend for a perfect blend of urban and wildlife adventure!"
+            },
+            {
+                "id": "2",
+                "name" : "Olivia Brown",
+                "image" : "https://media.gettyimages.com/id/523432912/photo/woman-talking-to-tribesman.jpg?s=612x612&w=0&k=20&c=yLgaDNOsWUnTkkwyMa0MH0peFI424OAkrzXQaKrTZeE=",
+                "location" : "Maasai Mara",
+                "review" : "My trip to Maasai Mara was incredible. The game drives offered stunning views of the Big Five, and witnessing the Great Migration was breathtaking. Meeting a Maasai Moran was a highlight, as he shared fascinating insights into Maasai culture and traditions. The vast landscapes and rich wildlife made every moment memorable. The knowledgeable guides further enhanced the experience. Highly recommend for an unforgettable safari adventure!"
+            },
+            {
+                "id": "3",
+                "name" : "Isabella Harris",
+                "image" : "https://media.gettyimages.com/id/1432769362/photo/female-tourist-in-sailing-boat-at-sea-moment-of-melancholy-kenya-africa-travel-2022.jpg?s=612x612&w=0&k=20&c=LwNYe39LbsWyQdbBLnTzj6RXuNYURpSK-mErox9kv2s=",
+                "location" : "Diani",
+                "review" : "My visit to Diani Beach was absolutely fantastic. The pristine white sands and crystal-clear waters provided a perfect setting for relaxation and fun. I enjoyed leisurely beach walks, refreshing swims, and vibrant local cuisine. The area’s serene atmosphere and stunning views made it a paradise for a tropical getaway. Highly recommend Diani for anyone looking for a beautiful and tranquil beach escape!"
+            }
+
+        ]
+    
 
 }
