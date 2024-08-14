@@ -20,8 +20,8 @@ function Discover() {
   const displayPlaces = filteredPlaces.map((place) => {
     return (
       <div className="place-card" key={place.id}>
-        {/* <details>
-          <summary> */}
+        <details>
+          <summary>
         <video
           autoPlay
           muted
@@ -33,10 +33,10 @@ function Discover() {
           <source src={place.image} type="video/mp4"></source>
         </video>
         <h1>{place.title}</h1>
+        </summary>
         <h4>{place.description}</h4>
-        {/* </summary> */}
         <h5>{place.activities}</h5>
-        {/* </details> */}
+        </details>
       </div>
     );
   });
