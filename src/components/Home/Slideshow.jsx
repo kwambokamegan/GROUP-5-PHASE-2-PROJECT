@@ -15,19 +15,44 @@ const Slideshow = () => {
     autoplaySpeed: 10000,
   };
 
-  const images = [
-    'https://jenmansafaris.com/wp-content/uploads/2014/08/Mount-Kenya.jpg',
-    'https://samburunationalreservekenya.com/wp-content/uploads/2023/05/NNP-Weekend-deal-for-Site.jpg',
-    'https://www.kenya-experience.com/wp-content/gallery/south-coast/Nomad-31.jpg',
-    'https://banoksafaris.com/wp-content/uploads/2024/03/Lake-Naivasha_0010_shutterstock_344974034.jpg',
+  const slides = [
+    {
+      image:'https://jenmansafaris.com/wp-content/uploads/2014/08/Mount-Kenya.jpg',
+      text:'Find your next',
+      highlight: 'Safari',
+      subText: 'Get the most adventurous and mind-blowing experience with the best deals',
+    },
+    {
+      image:'https://samburunationalreservekenya.com/wp-content/uploads/2023/05/NNP-Weekend-deal-for-Site.jpg',
+      text:'Find your next',
+      highlight: 'Safari',
+      subText: 'Get the most adventurous and mind-blowing experience with the best deals',
+    },
+    {
+      image:'https://www.kenya-experience.com/wp-content/gallery/south-coast/Nomad-31.jpg',
+      text:'Find your next',
+      highlight: 'Safari',
+      subText: 'Get the most adventurous and mind-blowing experience with the best deals',
+    },
+    {
+      image:'https://banoksafaris.com/wp-content/uploads/2024/03/Lake-Naivasha_0010_shutterstock_344974034.jpg',
+      text:'Find your next',
+      highlight: 'Safari',
+      subText: 'Get the most adventurous and mind-blowing experience with the best deals',
+    },
   ];
 
   return (
     <div className="slideshow-container">
       <Slider {...settings}>
-        {images.map((image, index) => (
+        {slides.map((slide, index) => (
           <div key={index} className="slide">
-            <img src={image} alt={`Slide ${index + 1}`} />
+            <img src={slide.image} alt={`Slide ${index + 1}`} className="slide-image" />
+            <div className="slide-text">
+              <div>{slide.text}</div>
+              <div><span>{slide.highlight}</span></div>
+              <div className="sub-text">{slide.subText}</div>
+            </div>
           </div>
         ))}
       </Slider>
