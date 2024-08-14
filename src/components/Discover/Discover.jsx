@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './Discover.css';
 function Discover() {
-  //Places State
-  const [places, setPlaces] = useState([]);
-  //Fetch Places
+  // Original Places State
+  const [originalPlaces, setOriginalPlaces] = useState([]);
+  // Filtered Places State
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
+
+  // Fetch Places
   useEffect(() => {
     fetch('https://safiri-backend.vercel.app/places')
       .then((response) => response.json())
-      .then((placesData) => setPlaces(placesData));
+      .then((placesData) => {
+        setOriginalPlaces(placesData); // Set original places
+        setFilteredPlaces(placesData); // Also set as filtered initially
+      });
   }, []);
 
-  //   console.log(places);
-  //Display places by iterating through places
-  const displayPlaces = places.map((place) => {
+  // Display places by iterating through filteredPlaces
+  const displayPlaces = filteredPlaces.map((place) => {
     return (
       <div className="place-card" key={place.id}>
         <video
@@ -37,7 +42,6 @@ function Discover() {
 
   function handlePlaceClick(event) {
     const placeId = event.target.id;
-    console.log(placeId);
     fetch(`https://safiri-backend.vercel.app/places/${placeId}`)
       .then((response) => response.json())
       .then((place) => {
@@ -71,12 +75,33 @@ function Discover() {
     setSavedPlaces(remainingSavedPlaces);
   }
 
+  // Searching for a place functionality
+  const [searchByPlaceTitle, setSearchByPlaceTitle] = useState('');
+
+  function handleSearch(event) {
+    const searchValue = event.target.value;
+    setSearchByPlaceTitle(searchValue);
+
+    // Update filteredPlaces based on search input
+    const searchedPlaces = originalPlaces.filter((place) => {
+      return place.title.toLowerCase().includes(searchValue.toLowerCase());
+    });
+
+    setFilteredPlaces(searchedPlaces);
+  }
+
   return (
     <div id="discover-container">
       <div id="content-container">
         <img src="/SAFIRI LOGO.png" alt="safiri-logo" title="safiri-logo" />
         <h1>Discover</h1>
-        <input type="text" id='search-bar' placeholder='Search Place'/>
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search Place"
+          onChange={handleSearch}
+          value={searchByPlaceTitle}
+        />
         <div id="places-container">{displayPlaces}</div>
       </div>
       <div id="saved-content-container">{displaySavedPlaces}</div>
