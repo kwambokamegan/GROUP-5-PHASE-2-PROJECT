@@ -4,6 +4,11 @@
 }
 /* #content-container {
 } */
+#search-bar {
+  width: 40%;
+  border: solid 2px #ddd;
+  border-radius: 5px;
+}
 #saved-content-container {
   height: 100%;
   width: 300px;
@@ -14,6 +19,8 @@
   background-color: whitesmoke;
   overflow-x: hidden;
   padding-top: 20px;
+  border-left: solid 1px #ddd;
+  border-top: solid 1px #ddd;
 }
 .place-card {
   background-color: whitesmoke;
@@ -43,7 +50,7 @@
   background-color: white;
   width: 280px;
   height: 150px;
-  border: solid 3px #ddd;
+  border: solid 2px #ddd;
   border-radius: 10px;
   text-align: center;
   font-size: xx-small;

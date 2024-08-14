@@ -34,8 +34,8 @@ function Discover() {
 
   //Save a place
   const [savedPlaces, setSavedPlaces] = useState([]);
+
   function handlePlaceClick(event) {
-    console.log(savedPlaces);
     const placeId = event.target.id;
     console.log(placeId);
     fetch(`https://safiri-backend.vercel.app/places/${placeId}`)
@@ -50,22 +50,35 @@ function Discover() {
   //Add a saved place to the Saved places section
   const displaySavedPlaces = savedPlaces.map((savedPlace) => {
     return (
-      <div className="saved-place-card" key={savedPlace.id}>
+      <div
+        className="saved-place-card"
+        key={savedPlace.id}
+        onClick={handleSavedPlaceClick}
+      >
         <h1>{savedPlace.title}</h1>
         <h4>{savedPlace.transport_options}</h4>
         {/* // <h5>{savedPlace.activities}</h5> */}
       </div>
     );
   });
+  //Undo save a place Function
+  function handleSavedPlaceClick(event) {
+    const savedPlaceId = event.target.key;
+    const remainingSavedPlaces = savedPlaces.filter((savedPlace) => {
+      // eslint-disable-next-line eqeqeq
+      return savedPlace.id != savedPlaceId;
+    });
+    setSavedPlaces(remainingSavedPlaces);
+  }
 
   return (
     <div id="discover-container">
       <div id="content-container">
         <img src="/SAFIRI LOGO.png" alt="safiri-logo" title="safiri-logo" />
         <h1>Discover</h1>
+        <input type="text" id='search-bar' placeholder='Search Place'/>
         <div id="places-container">{displayPlaces}</div>
       </div>
-
       <div id="saved-content-container">{displaySavedPlaces}</div>
     </div>
   );
