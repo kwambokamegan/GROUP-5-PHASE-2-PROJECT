@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Discover.css';
+import NavBar from '../NavBar/NavBar';
 function Discover() {
   // Original Places State
   const [originalPlaces, setOriginalPlaces] = useState([]);
@@ -123,31 +124,36 @@ function Discover() {
     setSavedPlacesOpened(!savedPlacesOpened);
   }
   return (
-    <div id="discover-container">
-      <div id="content-container">
-        <img src="/SAFIRI LOGO.png" alt="safiri-logo" title="safiri-logo" />
-        <h1>Discover</h1>
-        <input
-          type="text"
-          id="search-bar"
-          placeholder="Search Place"
-          onChange={handleSearch}
-          value={searchByPlaceTitle}
-        />
-        <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
-          ☰Open Saved Places
-        </button>
-        <div id="places-container">{displayPlaces}</div>
-      </div>
-      <div
-        id="saved-content-container"
-        style={savedPlacesOpened ? { width: '300px' } : {}}
-      >
-        <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
-          ☰Close Saved Places
-        </button>
+    <div>
+      <>
+        <NavBar />
+      </>
+      <div id="discover-container">
+        <div id="content-container">
+          <img src="/SAFIRI LOGO.png" alt="safiri-logo" title="safiri-logo" />
+          <h1>Discover</h1>
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search Place"
+            onChange={handleSearch}
+            value={searchByPlaceTitle}
+          />
+          <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
+            ☰Open Saved Places
+          </button>
+          <div id="places-container">{displayPlaces}</div>
+        </div>
+        <div
+          id="saved-content-container"
+          style={savedPlacesOpened ? { width: '300px' } : {}}
+        >
+          <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
+            ☰Close Saved Places
+          </button>
 
-        {displaySavedPlaces}
+          {displaySavedPlaces}
+        </div>
       </div>
     </div>
   );
