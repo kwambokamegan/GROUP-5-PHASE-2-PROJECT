@@ -1,10 +1,15 @@
+// src/App.js
+import React from 'react';
 import './App.css';
+import Review from './components/Review/Review'; 
+import ContactUs from './components/ContactUs/ContactUs';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    </div>
+    <main>
+      <Review/> {/* Render the Review component here */}
+    </main>
   );
-}
+};
 
 export default App;

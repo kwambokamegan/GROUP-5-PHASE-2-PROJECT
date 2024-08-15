@@ -1,0 +1,103 @@
+body{
+  background-color: #ddd;
+}
+
+.review-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background-color: gold;
+  }
+  
+  .review-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .circle.selected {
+    background-color: maroon;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color:maroon;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .existing-reviews {
+    margin-top: 30px;
+  }
+  
+  .existing-reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .review-item h3 {
+    margin: 0 0 10px;
+  }
+  
+  .review-item p {
+    margin: 5px 0;
+  }
+  
