@@ -29,7 +29,7 @@
   width: 300px;
   position: fixed;
   z-index: 1;
-  top: 85px;
+  top: 70px;
   right: 0;
   background-color: whitesmoke;
   overflow-x: hidden;
@@ -120,7 +120,7 @@ details[open] div {
     display: inline;
   }
 }
-/* @media screen and (max-width: 560px) {
+@media screen and (max-width: 560px) {
   .place-card {
     width: 200px;
   }
@@ -140,7 +140,7 @@ details[open] div {
   #discover-container {
     margin-left: 100px;
   }
-} */
+}
 
 /* #places-container {
 } */
