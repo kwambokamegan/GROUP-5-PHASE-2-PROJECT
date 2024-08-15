@@ -1,6 +1,9 @@
 #discover-container {
   margin-top: 50px;
   margin-right: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* #content-container {
 } */
@@ -9,6 +12,15 @@
   border: solid 2px #ddd;
   border-radius: 5px;
 }
+#handle-savedplaces-button {
+  border: solid 2px #ddd;
+  border-radius: 5px;
+  display: none;
+}
+#handle-savedplaces-button:hover {
+  font-weight: bold;
+}
+
 #saved-content-container {
   height: 100%;
   width: 300px;
@@ -62,8 +74,8 @@ details[open] div {
 }
 
 .place-video {
-  width: 500px;
-  height: 280px;
+  width: 100%;
+  height: fit-content;
   border: solid 1px #ddd;
   transition: transform 0.3s ease-in-out;
 }
@@ -92,6 +104,39 @@ details[open] div {
 .unsave-button:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+@media screen and (max-width: 860px) {
+  #saved-content-container {
+    width: 0%;
+  }
+  #discover-container {
+    margin-right: 0px;
+  }
+  #handle-savedplaces-button {
+    display: inline;
+  }
+}
+@media screen and (max-width: 560px) {
+  .place-card {
+    width: 200px;
+  }
+  .place-video {
+    width: 100%;
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 500px) {
+  .place-card {
+    width: 200px;
+  }
+  .place-video {
+    width: 100%;
+    height: fit-content;
+  }
+  /* #discover-container {
+    margin-left: 100px;
+  } */
 }
 
 /* #places-container {

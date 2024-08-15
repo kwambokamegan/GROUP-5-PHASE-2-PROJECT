@@ -117,6 +117,11 @@ function Discover() {
     setFilteredPlaces(searchedPlaces);
   }
 
+  //For responsiveness, Open Saved places
+  const [savedPlacesOpened, setSavedPlacesOpened] = useState(false);
+  function handleSavedPlaces() {
+    setSavedPlacesOpened(!savedPlacesOpened);
+  }
   return (
     <div id="discover-container">
       <div id="content-container">
@@ -129,9 +134,21 @@ function Discover() {
           onChange={handleSearch}
           value={searchByPlaceTitle}
         />
+        <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
+          ☰Open Saved Places
+        </button>
         <div id="places-container">{displayPlaces}</div>
       </div>
-      <div id="saved-content-container">{displaySavedPlaces}</div>
+      <div
+        id="saved-content-container"
+        style={savedPlacesOpened ? { width: '300px' } : {}}
+      >
+        <button id="handle-savedplaces-button" onClick={handleSavedPlaces}>
+          ☰Close Saved Places
+        </button>
+
+        {displaySavedPlaces}
+      </div>
     </div>
   );
 }
