@@ -17,7 +17,7 @@ function Discover() {
   }, []);
 
   // Display places by iterating through filteredPlaces
-  let [likedHeart, setLikedHeart] = useState(false);
+  //   let [likedHeart, setLikedHeart] = useState(false);
 
   const displayPlaces = filteredPlaces.map((place) => {
     return (
@@ -29,16 +29,19 @@ function Discover() {
             </video>
             <h1>{place.title}</h1>
           </summary>
-          <button
-            id={place.id}
-            className="save-button"
-            onClick={handleAddPlace}
-          >
-            {likedHeart ? '♥' : '♡'}
-            {likedHeart ? 'Saved' : 'Save'}
-          </button>
-          <h4>{place.description}</h4>
-          <h5>{place.activities}</h5>
+          <div className="details-content">
+            <button
+              id={place.id}
+              className="save-button"
+              onClick={handleAddPlace}
+            >
+              Save
+              {/* {likedHeart ? '♥' : '♡'}
+              {likedHeart ? 'Save/' : 'Unsave'} */}
+            </button>
+            <h4>{place.description}</h4>
+            <h5>{place.activities}</h5>
+          </div>
         </details>
       </div>
     );
@@ -55,13 +58,13 @@ function Discover() {
         if (!savedPlaces.some((savedPlace) => savedPlace.id === place.id)) {
           setSavedPlaces((prevState) => [...prevState, place]);
         }
-        setLikedHeart((likedHeart = true));
-        setSavedPlaceLikedHeart((savedPlaceLikedHeart = true));
+        // setLikedHeart((likedHeart = true));
+        // setSavedPlaceLikedHeart((savedPlaceLikedHeart = true));
       });
   }
 
   //Add a saved place to the Saved places section
-  let [savedPlaceLikedHeart, setSavedPlaceLikedHeart] = useState(true);
+  //   let [savedPlaceLikedHeart, setSavedPlaceLikedHeart] = useState(true);
 
   const displaySavedPlaces = savedPlaces.map((savedPlace) => {
     return (
@@ -71,25 +74,24 @@ function Discover() {
         onClick={handleSavedPlaceClick}
       >
         <h1>{savedPlace.title}</h1>
+        <h4>{savedPlace.transport_options}</h4>
         <button
           id={savedPlace.id}
           className="unsave-button"
           onClick={handleSavedPlaceClick}
         >
-          {savedPlaceLikedHeart ? '♥' : '♡'}
-          {savedPlaceLikedHeart ? 'Unsave' : 'Unsaved'}
+          Unsave
+          {/* {savedPlaceLikedHeart ? '♥' : '♡'}
+          {savedPlaceLikedHeart ? 'Unsave/' : 'Save'} */}
         </button>
-
-        <h4>{savedPlace.transport_options}</h4>
-        {/* // <h5>{savedPlace.activities}</h5> */}
       </div>
     );
   });
   //Undo save a place Function
   function handleSavedPlaceClick(event) {
     const savedPlaceId = event.target.id;
-    setSavedPlaceLikedHeart((savedPlaceLikedHeart = false));
-    setLikedHeart((likedHeart = false));
+    // setSavedPlaceLikedHeart((savedPlaceLikedHeart = false));
+    // setLikedHeart((likedHeart = false));
 
     setTimeout(() => {
       const remainingSavedPlaces = savedPlaces.filter((savedPlace) => {
