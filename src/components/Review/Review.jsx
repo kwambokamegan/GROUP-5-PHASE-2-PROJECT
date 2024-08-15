@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import './Review.css';
@@ -9,6 +8,7 @@ const Review = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState(null);
   const [source, setSource] = useState('');
+  const [image, setImage] = useState(''); 
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -37,114 +37,133 @@ const Review = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log('Name:', name);
-    console.log('Place Visited:', place);
-    console.log('Review:', reviewText);
-    console.log('Rating:', rating);
-    console.log('Source:', source);
+    const newReview = {
+      id: Date.now(),
+      name,
+      place,
+      review: reviewText,
+      image, 
+      rating,
+      source,
+    };
 
+    console.log(newReview);
 
+    setReviews([...reviews, newReview]);
+
+    
     setName('');
     setPlace('');
     setReviewText('');
     setRating(null);
     setSource('');
+    setImage(''); 
   };
 
   return (
     <>
-    <NavBar />
-     <div className="review-container">
-      <h2>Submit Your Review</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="place">Place Visited:</label>
-          <input
-            type="text"
-            id="place"
-            value={place}
-            onChange={(e) => setPlace(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="reviewText">Review:</label>
-          <textarea
-            id="reviewText"
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>How was your experience using our website?</label>
-          <div className="rating">
-            {Array.from({ length: 10 }, (_, i) => (
-              <span
-                key={i + 1}
-                className={`circle ${rating === i + 1 ? 'selected' : ''}`}
-                onClick={() => setRating(i + 1)}
+      <NavBar />
+      <div className="review-container">
+        <div className="form-container">
+          <h2>Submit Your Review</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="place">Place Visited:</label>
+              <input
+                type="text"
+                id="place"
+                value={place}
+                onChange={(e) => setPlace(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="reviewText">Review:</label>
+              <textarea
+                id="reviewText"
+                value={reviewText}
+                onChange={(e) => setReviewText(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="image">Image :</label>
+              <input
+                type="text"
+                id="image"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="Enter image URL (optional)"
+              />
+            </div>
+            <div className="form-group">
+              <label>How was your experience using our website?</label>
+              <div className="rating">
+                {Array.from({ length: 10 }, (_, i) => (
+                  <span
+                    key={i + 1}
+                    className={`circle ${rating === i + 1 ? 'selected' : ''}`}
+                    onClick={() => setRating(i + 1)}
+                  >
+                    {i + 1}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="source">How did you hear about us?</label>
+              <select
+                id="source"
+                value={source}
+                onChange={(e) => setSource(e.target.value)}
+                required
               >
-                {i + 1}
-              </span>
-            ))}
-          </div>
+                <option value="" disabled>Select an option</option>
+                <option value="friends">From Friends</option>
+                <option value="family">From Family</option>
+                <option value="advertisement">From an Advertisement</option>
+                <option value="social-media">From Social Media</option>
+              </select>
+            </div>
+            <button type="submit">Submit Review</button>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="source">How did you hear about us?</label>
-          <select
-            id="source"
-            value={source}
-            onChange={(e) => setSource(e.target.value)}
-            required
-          >
-            <option value="" disabled>Select an option</option>
-            <option value="friends">From Friends</option>
-            <option value="family">From Family</option>
-            <option value="advertisement">From an Advertisement</option>
-            <option value="social-media">From Social Media</option>
-          </select>
+        <div className="existing-reviews new-reviews">
+          <h2>Reviews from Other Tourists</h2>
+          {reviews.length > 0 ? (
+            <ul>
+              {reviews.map((review) => (
+                <li key={review.id} className="review-item">
+                  {review.image && (
+                    <img
+                      src={review.image}
+                      alt={`${review.name}'s review`}
+                      className="review-picture"
+                    />
+                  )}
+                  <h3>{review.name}</h3>
+                  {review.place && <p><strong>Place Visited:</strong> {review.place}</p>}
+                  {review.review && <p><strong>Review:</strong> {review.review}</p>}
+                  {/* Removed rating and source */}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No reviews available.</p>
+          )}
         </div>
-        <button type="submit">Submit Review</button>
-      </form>
-      <div className="existing-reviews">
-        <h2>Reviews from Other Tourists</h2>
-        {reviews.length > 0 ? (
-          <ul>
-            {reviews.map((review) => (
-              <li key={review.id} className="review-item">
-                {review.image && (
-                  <img
-                    src={review.image}
-                    alt={`${review.name}'s review`}
-                    className="review-picture"
-                  />
-                )}
-                <h3>{review.name}</h3>
-                <p><strong>Place Visited:</strong> {review.place || 'N/A'}</p>
-                <p><strong>Review:</strong> {review.review}</p>
-                <p><strong>Rating:</strong> {review.rating || 'N/A'}</p>
-                <p><strong>Source:</strong> {review.source || 'N/A'}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No reviews available.</p>
-        )}
       </div>
-    </div>
     </>
-   
   );
 };
 
