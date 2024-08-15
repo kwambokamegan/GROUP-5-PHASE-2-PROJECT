@@ -4,11 +4,13 @@ import logo from "../pictures/SAFIRI LOGO.png"
 import markImage from "../pictures/Mark image.png"
 import aronImage from "../pictures/Aronn image.png"
 import kevinImage from "../pictures/kev image.png"
+import NavBar from '../NavBar/NavBar';
 import meganImage from "../pictures/Meg image.png"
 
 function AboutUs() {
   return (
     <>
+    <NavBar />
       <div className="about-us">
         <Logo />
         <h1>About</h1>

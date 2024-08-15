@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import NavBar from '../NavBar/NavBar';
 import './Review.css';
 
 const Review = () => {
@@ -51,7 +52,9 @@ const Review = () => {
   };
 
   return (
-    <div className="review-container">
+    <>
+    <NavBar />
+     <div className="review-container">
       <h2>Submit Your Review</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -140,6 +143,8 @@ const Review = () => {
         )}
       </div>
     </div>
+    </>
+   
   );
 };
 
