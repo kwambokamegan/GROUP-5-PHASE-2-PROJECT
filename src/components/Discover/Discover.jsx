@@ -17,25 +17,28 @@ function Discover() {
   }, []);
 
   // Display places by iterating through filteredPlaces
+  let [likedHeart, setLikedHeart] = useState(false);
+
   const displayPlaces = filteredPlaces.map((place) => {
     return (
       <div className="place-card" key={place.id}>
         <details>
           <summary>
-        <video
-          autoPlay
-          muted
-          loop
-          className="place-video"
-          id={place.id}
-          onClick={handlePlaceClick}
-        >
-          <source src={place.image} type="video/mp4"></source>
-        </video>
-        <h1>{place.title}</h1>
-        </summary>
-        <h4>{place.description}</h4>
-        <h5>{place.activities}</h5>
+            <video autoPlay muted loop className="place-video" id={place.id}>
+              <source src={place.image} type="video/mp4"></source>
+            </video>
+            <h1>{place.title}</h1>
+          </summary>
+          <button
+            id={place.id}
+            className="save-button"
+            onClick={handleAddPlace}
+          >
+            {likedHeart ? '♥' : '♡'}
+            {likedHeart ? 'Saved' : 'Save'}
+          </button>
+          <h4>{place.description}</h4>
+          <h5>{place.activities}</h5>
         </details>
       </div>
     );
@@ -44,7 +47,7 @@ function Discover() {
   //Save a place
   const [savedPlaces, setSavedPlaces] = useState([]);
 
-  function handlePlaceClick(event) {
+  function handleAddPlace(event) {
     const placeId = event.target.id;
     fetch(`https://safiri-backend.vercel.app/places/${placeId}`)
       .then((response) => response.json())
@@ -52,10 +55,14 @@ function Discover() {
         if (!savedPlaces.some((savedPlace) => savedPlace.id === place.id)) {
           setSavedPlaces((prevState) => [...prevState, place]);
         }
+        setLikedHeart((likedHeart = true));
+        setSavedPlaceLikedHeart((savedPlaceLikedHeart = true));
       });
   }
 
   //Add a saved place to the Saved places section
+  let [savedPlaceLikedHeart, setSavedPlaceLikedHeart] = useState(true);
+
   const displaySavedPlaces = savedPlaces.map((savedPlace) => {
     return (
       <div
@@ -64,6 +71,15 @@ function Discover() {
         onClick={handleSavedPlaceClick}
       >
         <h1>{savedPlace.title}</h1>
+        <button
+          id={savedPlace.id}
+          className="unsave-button"
+          onClick={handleSavedPlaceClick}
+        >
+          {savedPlaceLikedHeart ? '♥' : '♡'}
+          {savedPlaceLikedHeart ? 'Unsave' : 'Unsaved'}
+        </button>
+
         <h4>{savedPlace.transport_options}</h4>
         {/* // <h5>{savedPlace.activities}</h5> */}
       </div>
@@ -71,12 +87,17 @@ function Discover() {
   });
   //Undo save a place Function
   function handleSavedPlaceClick(event) {
-    const savedPlaceId = event.target.key;
-    const remainingSavedPlaces = savedPlaces.filter((savedPlace) => {
-      // eslint-disable-next-line eqeqeq
-      return savedPlace.id != savedPlaceId;
-    });
-    setSavedPlaces(remainingSavedPlaces);
+    const savedPlaceId = event.target.id;
+    setSavedPlaceLikedHeart((savedPlaceLikedHeart = false));
+    setLikedHeart((likedHeart = false));
+
+    setTimeout(() => {
+      const remainingSavedPlaces = savedPlaces.filter((savedPlace) => {
+        // eslint-disable-next-line eqeqeq
+        return savedPlace.id != savedPlaceId;
+      });
+      setSavedPlaces(remainingSavedPlaces);
+    }, 1000);
   }
 
   // Searching for a place functionality

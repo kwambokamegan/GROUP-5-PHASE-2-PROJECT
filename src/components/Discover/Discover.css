@@ -22,6 +22,10 @@
   border-left: solid 1px #ddd;
   border-top: solid 1px #ddd;
 }
+.save-button {
+  width: fit-content;
+  height: fit-content;
+}
 .place-card {
   background-color: whitesmoke;
   display: inline-grid;
@@ -33,16 +37,6 @@
   text-align: center;
 }
 
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    margin-left: -10px;
-  }
-  100% {
-    opacity: 1;
-    margin-left: 0px;
-  }
-}
 details summary {
   cursor: pointer;
   transition: margin 150ms ease-out;
@@ -53,6 +47,17 @@ details[open] summary {
 
   margin-bottom: 10px;
 }
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
 .place-video {
   width: 500px;
   height: 280px;
@@ -77,6 +82,10 @@ details[open] summary {
   font-size: xx-small;
   margin: 5px;
   padding: 10px;
+}
+.unsave-button {
+  width: fit-content;
+  height: fit-content;
 }
 
 /* #places-container {
