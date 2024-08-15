@@ -1,8 +1,11 @@
 import React from 'react';
 import './ContactUs.css';
+import NavBar from '../NavBar/NavBar';
  
 const ContactUs = () => {
   return (
+    <>
+    <NavBar />
     <div className="contact-us">
       <div className="message">We love to talk to you! Here is how you can reach us:</div>
       <div className="contact-container">
@@ -24,6 +27,8 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
+    </>
+    
   );
 };
 
