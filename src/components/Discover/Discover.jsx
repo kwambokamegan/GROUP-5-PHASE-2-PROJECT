@@ -130,7 +130,6 @@ function Discover() {
       </>
       <div id="discover-container">
         <div id="content-container">
-          <img src="/SAFIRI LOGO.png" alt="safiri-logo" title="safiri-logo" />
           <h1>Discover</h1>
           <input
             type="text"
