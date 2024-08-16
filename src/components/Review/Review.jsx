@@ -38,11 +38,10 @@ const Review = () => {
     fetchReviews();
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const newReview = {
-      id: Date.now(),
       name,
       place,
       review: reviewText,
@@ -51,16 +50,35 @@ const Review = () => {
       source,
     };
 
-    console.log(newReview);
+    try {
+      const response = await fetch('https://safiri-backend.vercel.app/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newReview),
+      });
 
-    setReviews([...reviews, newReview]);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-    setName('');
-    setPlace('');
-    setReviewText('');
-    setRating(null);
-    setSource('');
-    setImage('');
+      // Optionally handle the response data if needed
+      const data = await response.json();
+
+      // Add new review to local state
+      setReviews([...reviews, newReview]);
+
+      // Clear form inputs
+      setName('');
+      setPlace('');
+      setReviewText('');
+      setRating(null);
+      setSource('');
+      setImage('');
+    } catch (error) {
+      console.error('Error posting review:', error);
+    }
   };
 
   return (

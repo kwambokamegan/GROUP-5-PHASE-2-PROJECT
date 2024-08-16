@@ -11,7 +11,7 @@
   border: 1px solid gold;
   border-radius: 5px;
   background-color: gold;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box; 
 }
 
 .form-container,
