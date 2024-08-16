@@ -101,7 +101,7 @@ Review: Review text
 
 ### Vercel link 
 
-[Vercel Link](`https://group-5-phase-2-project.vercel.app/review`)
+[Vercel Link](https://group-5-phase-2-project.vercel.app/review)
 
 ### Git hub link
 
