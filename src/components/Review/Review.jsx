@@ -8,7 +8,7 @@ const Review = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState(null);
   const [source, setSource] = useState('');
-  const [image, setImage] = useState(''); 
+  const [image, setImage] = useState(''); // New state for image URL
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {

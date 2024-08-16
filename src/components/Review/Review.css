@@ -1,20 +1,29 @@
 body {
   background-color: #ddd;
-  padding-top: 100px;
+  margin: 0; /* Ensure no default margin is applied */
+  padding-top: 100px; /* Adjust as needed for spacing */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (optional) */
+  min-height: 100vh; /* Ensure full viewport height */
 }
 
 .review-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center child elements horizontally */
+  align-items: flex-start; /* Align items to the start vertically */
   max-width: 1200px; 
+  width: 100%; /* Full width of the viewport */
   padding: 20px;
   border: 1px solid gold;
   border-radius: 5px;
   background-color: gold;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .form-container, .existing-reviews, .new-reviews {
-  width: 48%; 
+  width: 48%; /* Adjust as needed */
 }
 
 .form-container {
