@@ -1,0 +1,129 @@
+body{
+padding-top: 100px;
+}
+
+.about-us {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.logo-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.vision-section,
+.mission-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  overflow: hidden;
+  color: #f5f5f5;
+}
+
+.vision-section {
+  background-image: url("../pictures/lion.avif");
+}
+
+.mission-section {
+  background-image: url("../pictures/lion.avif");
+}
+.vision-section::before,
+.mission-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.vision-content,
+.mission-content {
+  position: relative;
+  z-index: 2;
+}
+
+.team-section {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  margin: 20px;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-member-image {
+  border-radius: 50%;
+  max-width: 120px;
+  transition: 0.3s;
+}
+
+.team-member-image:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+h2,
+h3,
+a {
+  color: #d4af37;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+  }
+
+  .team-member {
+    margin: 10px 0;
+  }
+}
+.vision-content ol {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.vision-content li {
+  margin: 10px 0;
+  line-height: 1.6;
+}

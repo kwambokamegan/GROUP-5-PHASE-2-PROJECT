@@ -1,0 +1,147 @@
+body {
+  background-color: #ddd;
+  padding-top: 100px;
+}
+#review-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 20px;
+  border: 1px solid gold;
+  border-radius: 5px;
+  background-color: gold;
+}
+
+.form-container,
+.existing-reviews,
+.new-reviews {
+  width: 48%;
+}
+
+.form-container {
+  border-right: 2px solid #ccc;
+  padding-right: 20px;
+}
+
+.form-container h2,
+.existing-reviews h2,
+.new-reviews h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+}
+
+.circle.selected {
+  background-color: maroon;
+}
+
+#submit-review-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#submit-review-button:hover {
+  background-color: #0056b3;
+}
+
+.existing-reviews,
+.new-reviews {
+  margin-top: 30px;
+}
+
+.existing-reviews {
+  overflow: auto;
+}
+
+.review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-item img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.review-item h3 {
+  margin: 0 0 10px;
+  color: black;
+}
+
+.review-item p {
+  margin: 5px 0;
+  width: 100%;
+  word-break: break-word;
+  color: black;
+}
+
+.new-reviews {
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+}
+
+#review-page-footer {
+  width: 100%;
+}

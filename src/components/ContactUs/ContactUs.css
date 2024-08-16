@@ -1,0 +1,56 @@
+#contactus-page {
+  display: flex;
+}
+#safiri-logo {
+  width: 150px;
+}
+.contact-us {
+  height: 100%;
+  background-image: url('https://media.istockphoto.com/id/1864834686/photo/e-mail-button-gold-3d-illustration.webp?b=1&s=612x612&w=0&k=20&c=8gxoUEBJP-q9Td-0C573kljDAObouSLuR8UxZRi-Q4Y=');
+  background-size: cover;
+  background-position: center;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  right: 0;
+  left: 0;
+  position: fixed;
+  top: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+#contactus-footer {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  height: 5px;
+  width: 100%;
+}
