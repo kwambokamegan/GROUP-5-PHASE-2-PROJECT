@@ -46,9 +46,13 @@ This is the main component that sets up the routing for the application.
 * Routes:
 
 / - Home
+<br/>
 /discover - Discover
+<br/>
 /about - About Us
+<br/>
 /review - Review
+<br/>
 /contactus - Contact Us
 
 
