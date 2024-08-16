@@ -101,11 +101,11 @@ Review: Review text
 
 ### Vercel link 
 
-[Vercel Link](https://group-5-phase-2-project.vercel.app/review)
+[Vercel](https://group-5-phase-2-project.vercel.app/review)
 
 ### Git hub link
 
-[Git hub link ] (`https://github.com/kwambokamegan/GROUP-5-PHASE-2-PROJECT`)
+[Github] (https://github.com/kwambokamegan/GROUP-5-PHASE-2-PROJECT)
 
 ## Author 
 Megan Kwamboka
@@ -115,7 +115,7 @@ Megan Kwamboka
 16th August 2024
 
 ## Conclusion 
-The project was worked on by Megan Kwamboka , Mark Brian , Kevin Kamau and Aron Kipkorir.
+The project was worked on by Megan Kwamboka, Mark Brian, Kevin Kamau and Aron Kipkorir.
 
 
 
