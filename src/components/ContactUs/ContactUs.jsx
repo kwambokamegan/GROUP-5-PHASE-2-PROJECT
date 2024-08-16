@@ -2,6 +2,7 @@ import React from 'react';
 import './ContactUs.css';
 import NavBar from '../NavBar/NavBar';
 import logo from '../pictures/SAFIRI LOGO.png';
+import Footer from '../Footer/Footer';
 
 const ContactUs = () => {
   return (
@@ -49,6 +50,9 @@ const ContactUs = () => {
             <span>You can find us on Instagram at @SAFIRI_TRAVEL.</span>
           </div>
         </div>
+      </div>
+      <div id="contactus-footer">
+        <Footer />
       </div>
     </div>
   );

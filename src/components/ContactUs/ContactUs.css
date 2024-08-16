@@ -47,3 +47,10 @@
   margin-right: 10px;
   border-radius: 10px;
 }
+#contactus-footer {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  height: 5px;
+  width: 100%;
+}
