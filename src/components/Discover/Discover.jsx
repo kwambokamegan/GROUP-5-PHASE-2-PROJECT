@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Discover.css';
 import NavBar from '../NavBar/NavBar';
 import logo from '../pictures/SAFIRI LOGO.png';
+import Footer from '../Footer/Footer';
 
 function Discover() {
   // Original Places State
@@ -156,6 +157,9 @@ function Discover() {
 
           {displaySavedPlaces}
         </div>
+      </div>
+      <div id="discover-page-footer">
+        <Footer />
       </div>
     </div>
   );

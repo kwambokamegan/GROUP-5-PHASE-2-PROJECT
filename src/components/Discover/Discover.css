@@ -111,7 +111,9 @@ details[open] div {
   cursor: pointer;
   font-weight: bold;
 }
-
+#discover-page-footer {
+  margin-right: 300px;
+}
 @media screen and (max-width: 860px) {
   #saved-content-container {
     width: 0%;
