@@ -5,6 +5,9 @@
   flex-direction: column;
   align-items: center;
 }
+#safiri-logo {
+  width: 150px;
+}
 #content-container {
   display: flex;
   flex-direction: column;
@@ -108,7 +111,9 @@ details[open] div {
   cursor: pointer;
   font-weight: bold;
 }
-
+#discover-page-footer {
+  margin-right: 300px;
+}
 @media screen and (max-width: 860px) {
   #saved-content-container {
     width: 0%;

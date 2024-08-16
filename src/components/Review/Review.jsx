@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import './Review.css';
+import logo from '../pictures/SAFIRI LOGO.png';
+import Footer from '../Footer/Footer';
 
 const Review = () => {
   const [name, setName] = useState('');
@@ -8,13 +10,19 @@ const Review = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState(null);
   const [source, setSource] = useState('');
+<<<<<<< HEAD
   const [image, setImage] = useState(''); // New state for image URL
+=======
+  const [image, setImage] = useState('');
+>>>>>>> 748834cb2de7971a252d59aa4dab72cfd6b6fc9d
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('https://safiri-backend.vercel.app/reviews');
+        const response = await fetch(
+          'https://safiri-backend.vercel.app/reviews'
+        );
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -42,7 +50,7 @@ const Review = () => {
       name,
       place,
       review: reviewText,
-      image, 
+      image,
       rating,
       source,
     };
@@ -51,18 +59,21 @@ const Review = () => {
 
     setReviews([...reviews, newReview]);
 
-    
     setName('');
     setPlace('');
     setReviewText('');
     setRating(null);
     setSource('');
-    setImage(''); 
+    setImage('');
   };
 
   return (
-    <>
+    <div id='review-page'>
       <NavBar />
+
+      <img src={logo} alt="safiri-logo" id="safiri-logo" />
+      <h1>Review</h1>
+
       <div className="review-container">
         <div className="form-container">
           <h2>Submit Your Review</h2>
@@ -128,14 +139,16 @@ const Review = () => {
                 onChange={(e) => setSource(e.target.value)}
                 required
               >
-                <option value="" disabled>Select an option</option>
+                <option value="" disabled>
+                  Select an option
+                </option>
                 <option value="friends">From Friends</option>
                 <option value="family">From Family</option>
                 <option value="advertisement">From an Advertisement</option>
                 <option value="social-media">From Social Media</option>
               </select>
             </div>
-            <button type="submit">Submit Review</button>
+            <button type="submit" id='submit-review-button'>Submit Review</button>
           </form>
         </div>
         <div className="existing-reviews new-reviews">
@@ -152,8 +165,16 @@ const Review = () => {
                     />
                   )}
                   <h3>{review.name}</h3>
-                  {review.place && <p><strong>Place Visited:</strong> {review.place}</p>}
-                  {review.review && <p><strong>Review:</strong> {review.review}</p>}
+                  {review.place && (
+                    <p>
+                      <strong>Place Visited:</strong> {review.place}
+                    </p>
+                  )}
+                  {review.review && (
+                    <p>
+                      <strong>Review:</strong> {review.review}
+                    </p>
+                  )}
                   {/* Removed rating and source */}
                 </li>
               ))}
@@ -163,7 +184,10 @@ const Review = () => {
           )}
         </div>
       </div>
-    </>
+      <div id='review-page-footer'>
+      <Footer />
+      </div>
+    </div>
   );
 };
 

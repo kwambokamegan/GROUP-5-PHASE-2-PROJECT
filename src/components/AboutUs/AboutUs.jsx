@@ -6,6 +6,7 @@ import aronImage from "../pictures/Aronn image.png"
 import kevinImage from "../pictures/kev image.png"
 import NavBar from '../NavBar/NavBar';
 import meganImage from "../pictures/Meg image.png"
+import Footer from '../Footer/Footer';
 
 function AboutUs() {
   return (
@@ -105,12 +106,5 @@ function TeamMember({ name, imageUrl, githubLink }) {
   );
 }
 
-function Footer() {
-  return (
-    <div className="footer">
-      <p>&copy; 2024 Safiri All rights reserved.</p>
-    </div>
-  );
-}
 
 export default AboutUs;
