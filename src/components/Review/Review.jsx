@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import './Review.css';
 import logo from '../pictures/SAFIRI LOGO.png';
+import Footer from '../Footer/Footer';
 
 const Review = () => {
   const [name, setName] = useState('');
@@ -178,6 +179,9 @@ const Review = () => {
             <p>No reviews available.</p>
           )}
         </div>
+      </div>
+      <div id='review-page-footer'>
+      <Footer />
       </div>
     </div>
   );
