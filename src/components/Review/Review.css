@@ -2,7 +2,11 @@ body {
   background-color: #ddd;
   padding-top: 100px;
 }
-
+#review-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .review-container {
   display: flex;
   justify-content: space-between;
