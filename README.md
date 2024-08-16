@@ -5,6 +5,7 @@
 Safiri is a travel app designed to help users explore various destinations, submit reviews, and view a slideshow of attractive travel locations.
 
 ## Features
+Feel free to check out our website's <a href="https://youtu.be/5-Q7RNaPvBo">demo</a>.
 
 * Home : Displays a welcome message and a slideshow of travel destinations.
 
