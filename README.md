@@ -109,7 +109,7 @@ Review: Review text
 
 ### Git hub link
 
-[Github] (https://github.com/kwambokamegan/GROUP-5-PHASE-2-PROJECT)
+[Github](https://github.com/kwambokamegan/GROUP-5-PHASE-2-PROJECT)
 
 ## Author 
 Megan Kwamboka
