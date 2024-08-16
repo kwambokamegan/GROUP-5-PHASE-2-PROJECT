@@ -10,11 +10,7 @@ const Review = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState(null);
   const [source, setSource] = useState('');
-<<<<<<< HEAD
-  const [image, setImage] = useState(''); // New state for image URL
-=======
-  const [image, setImage] = useState('');
->>>>>>> 748834cb2de7971a252d59aa4dab72cfd6b6fc9d
+  const [image, setImage] = useState(''); 
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
