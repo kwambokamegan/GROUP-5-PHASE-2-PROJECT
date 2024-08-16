@@ -79,7 +79,7 @@ body {
   background-color: maroon;
 }
 
-button {
+#submit-review-button {
   display: block;
   width: 100%;
   padding: 10px;
@@ -91,7 +91,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#submit-review-button:hover {
   background-color: #0056b3;
 }
 

@@ -143,7 +143,7 @@ const Review = () => {
                 <option value="social-media">From Social Media</option>
               </select>
             </div>
-            <button type="submit">Submit Review</button>
+            <button type="submit" id='submit-review-button'>Submit Review</button>
           </form>
         </div>
         <div className="existing-reviews new-reviews">
