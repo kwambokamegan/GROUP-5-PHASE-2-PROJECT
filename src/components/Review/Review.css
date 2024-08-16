@@ -1,12 +1,3 @@
-body {
-  background-color: #ddd;
-  margin: 0; /* Ensure no default margin is applied */
-  padding-top: 100px; /* Adjust as needed for spacing */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically (optional) */
-  min-height: 100vh; /* Ensure full viewport height */
-}
 #review-page {
   display: flex;
   flex-direction: column;
