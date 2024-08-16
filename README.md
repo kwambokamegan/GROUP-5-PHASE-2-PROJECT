@@ -114,6 +114,9 @@ Megan Kwamboka
 
 16th August 2024
 
+## Conclusion 
+The project was worked on by Megan Kwamboka , Mark Brian , Kevin Kamau and Aron Kipkorir.
+
 
 
 
