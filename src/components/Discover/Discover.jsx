@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Discover.css';
 import NavBar from '../NavBar/NavBar';
+import logo from '../pictures/SAFIRI LOGO.png';
+
 function Discover() {
   // Original Places State
   const [originalPlaces, setOriginalPlaces] = useState([]);
@@ -130,6 +132,7 @@ function Discover() {
       </>
       <div id="discover-container">
         <div id="content-container">
+          <img src={logo} alt="safiri-logo" id="safiri-logo" />
           <h1>Discover</h1>
           <input
             type="text"
